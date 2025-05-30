@@ -27,8 +27,8 @@
 ## ⏳ Project Status
 
 📑 Planning Phase
-Initial setup complete (GitHub, local repo, project structure).
-Currently designing features and layout.
+- Initial setup complete (GitHub, local repo, project structure).
+- Currently designing features and layout.
 
 ---
 
@@ -82,6 +82,10 @@ Luckerryy/
 | Mobile Port  | ⏳ Future       | TBD            |
 
 ---
+
+## 🗂️ Project Documentation
+
+- [📋 Project Planning Documentation](Planning.md)
 
 ## 💡 License
 
