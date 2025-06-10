@@ -3,7 +3,8 @@ public class DrawSchedule
     public List<DayOfWeek> Days { get; set; } = new();
     public TimeSpan DrawTime { get; set; }
     public TimeSpan Deadline { get; set; }
-    public TimeSpan TimeUntilDeadline => (CalculateNextDraw() - Deadline) - DateTime.Now;
+    public DateTime NextDeadline => NextDraw.Date + Deadline;
+    public TimeSpan TimeUntilDeadline => NextDeadline - DateTime.Now;
     public DateTime NextDraw => CalculateNextDraw();
 
     private DateTime CalculateNextDraw()

@@ -25,10 +25,10 @@ public static class MockData
                 },
                 PrizeTiers = new List<PrizeTier>
                 {
-                    new PrizeTier{ MainMatches = 5, OddsRatio = 1/43949268, ProjectedPrize = 2966000000 },
-                    new PrizeTier{ MainMatches = 4, OddsRatio = 1/103410, ProjectedPrize = 1376935 },
-                    new PrizeTier{ MainMatches = 3, OddsRatio = 1/1231, ProjectedPrize = 15845 },
-                    new PrizeTier{ MainMatches = 2, OddsRatio = 1/44, ProjectedPrize = 2460 }
+                    new PrizeTier{ MainMatches = 5, OddsRatio = 1m/43949268m, ProjectedPrize = 2966000000 },
+                    new PrizeTier{ MainMatches = 4, OddsRatio = 1m/103410m, ProjectedPrize = 1376935 },
+                    new PrizeTier{ MainMatches = 3, OddsRatio = 1m/1231m, ProjectedPrize = 15845 },
+                    new PrizeTier{ MainMatches = 2, OddsRatio = 1m/44m, ProjectedPrize = 2460 }
                 }
             },
             new Lottery
@@ -52,10 +52,10 @@ public static class MockData
                 },
                 PrizeTiers = new List<PrizeTier>
                 {
-                    new PrizeTier{ MainMatches = 6, OddsRatio = 1/8145060, ProjectedPrize = 221000000 },
-                    new PrizeTier{ MainMatches = 5, OddsRatio = 1/34808, ProjectedPrize = 237300 },
-                    new PrizeTier{ MainMatches = 4, OddsRatio = 1/733, ProjectedPrize = 6220 },
-                    new PrizeTier{ MainMatches = 3, OddsRatio = 1/45, ProjectedPrize = 2705 }
+                    new PrizeTier{ MainMatches = 6, OddsRatio = 1m/8145060m, ProjectedPrize = 221000000 },
+                    new PrizeTier{ MainMatches = 5, OddsRatio = 1m/34808m, ProjectedPrize = 237300 },
+                    new PrizeTier{ MainMatches = 4, OddsRatio = 1m/733m, ProjectedPrize = 6220 },
+                    new PrizeTier{ MainMatches = 3, OddsRatio = 1m/45m, ProjectedPrize = 2705 }
                 }
             },
             new Lottery
@@ -79,10 +79,10 @@ public static class MockData
                 },
                 PrizeTiers = new List<PrizeTier>
                 {
-                    new PrizeTier{ MainMatches = 7, OddsRatio = 1/3362260, ProjectedPrize = 70000000 },
-                    new PrizeTier{ MainMatches = 6, OddsRatio = 1/17155, ProjectedPrize = 197830 },
-                    new PrizeTier{ MainMatches = 5, OddsRatio = 1/424, ProjectedPrize = 6060 },
-                    new PrizeTier{ MainMatches = 4, OddsRatio = 1/30, ProjectedPrize = 2425 }
+                    new PrizeTier{ MainMatches = 7, OddsRatio = 1m/3362260m, ProjectedPrize = 70000000 },
+                    new PrizeTier{ MainMatches = 6, OddsRatio = 1m/17155m, ProjectedPrize = 197830 },
+                    new PrizeTier{ MainMatches = 5, OddsRatio = 1m/424m, ProjectedPrize = 6060 },
+                    new PrizeTier{ MainMatches = 4, OddsRatio = 1m/30m, ProjectedPrize = 2425 }
                 }
             },
             new Lottery
@@ -112,18 +112,18 @@ public static class MockData
                 },
                 PrizeTiers = new List<PrizeTier>
                 {
-                    new PrizeTier{ MainMatches = 5, ExtraMatches = 2, OddsRatio = 1/139838160, ProjectedPrize = 8800000000 },
-                    new PrizeTier{ MainMatches = 5, ExtraMatches = 1, OddsRatio = 1/6991908, ProjectedPrize = 732181883 },
-                    new PrizeTier{ MainMatches = 5, ExtraMatches = 0, OddsRatio = 1/3107515, ProjectedPrize = 49124190 },
-                    new PrizeTier{ MainMatches = 4, ExtraMatches = 2, OddsRatio = 1/621503, ProjectedPrize = 2278955 },
-                    new PrizeTier{ MainMatches = 4, ExtraMatches = 1, OddsRatio = 1/31075, ProjectedPrize = 102855 },
-                    new PrizeTier{ MainMatches = 3, ExtraMatches = 2, OddsRatio = 1/14125, ProjectedPrize = 66950 },
-                    new PrizeTier{ MainMatches = 4, ExtraMatches = 0, OddsRatio = 1/13811, ProjectedPrize = 34355 },
-                    new PrizeTier{ MainMatches = 2, ExtraMatches = 2, OddsRatio = 1/985, ProjectedPrize = 11910 },
-                    new PrizeTier{ MainMatches = 3, ExtraMatches = 1, OddsRatio = 1/706, ProjectedPrize = 7010 },
-                    new PrizeTier{ MainMatches = 3, ExtraMatches = 0, OddsRatio = 1/314, ProjectedPrize = 5975 },
-                    new PrizeTier{ MainMatches = 1, ExtraMatches = 2, OddsRatio = 1/188, ProjectedPrize = 5975 },
-                    new PrizeTier{ MainMatches = 2, ExtraMatches = 1, OddsRatio = 1/49, ProjectedPrize = 3870 },
+                    new PrizeTier{ MainMatches = 5, ExtraMatches = 2, OddsRatio = 1m/139838160m, ProjectedPrize = 8800000000 },
+                    new PrizeTier{ MainMatches = 5, ExtraMatches = 1, OddsRatio = 1m/6991908m, ProjectedPrize = 732181883 },
+                    new PrizeTier{ MainMatches = 5, ExtraMatches = 0, OddsRatio = 1m/3107515m, ProjectedPrize = 49124190 },
+                    new PrizeTier{ MainMatches = 4, ExtraMatches = 2, OddsRatio = 1m/621503m, ProjectedPrize = 2278955 },
+                    new PrizeTier{ MainMatches = 4, ExtraMatches = 1, OddsRatio = 1m/31075m, ProjectedPrize = 102855 },
+                    new PrizeTier{ MainMatches = 3, ExtraMatches = 2, OddsRatio = 1m/14125m, ProjectedPrize = 66950 },
+                    new PrizeTier{ MainMatches = 4, ExtraMatches = 0, OddsRatio = 1m/13811m, ProjectedPrize = 34355 },
+                    new PrizeTier{ MainMatches = 2, ExtraMatches = 2, OddsRatio = 1m/985m, ProjectedPrize = 11910 },
+                    new PrizeTier{ MainMatches = 3, ExtraMatches = 1, OddsRatio = 1m/706m, ProjectedPrize = 7010 },
+                    new PrizeTier{ MainMatches = 3, ExtraMatches = 0, OddsRatio = 1m/314m, ProjectedPrize = 5975 },
+                    new PrizeTier{ MainMatches = 1, ExtraMatches = 2, OddsRatio = 1m/188m, ProjectedPrize = 5975 },
+                    new PrizeTier{ MainMatches = 2, ExtraMatches = 1, OddsRatio = 1m/49m, ProjectedPrize = 3870 },
                 }
             },
             new Lottery
@@ -147,11 +147,11 @@ public static class MockData
                 },
                 PrizeTiers = new List<PrizeTier>
                 {
-                    new PrizeTier{ MainMatches = 6, OddsRatio = 1/1000000, ProjectedPrize = 72000000 },
-                    new PrizeTier{ MainMatches = 5, OddsRatio = 1/111111, ProjectedPrize = 2500000 },
-                    new PrizeTier{ MainMatches = 4, OddsRatio = 1/11111, ProjectedPrize = 250000 },
-                    new PrizeTier{ MainMatches = 3, OddsRatio = 1/1111, ProjectedPrize = 25000 },
-                    new PrizeTier{ MainMatches = 2, OddsRatio = 1/111, ProjectedPrize = 2500 }
+                    new PrizeTier{ MainMatches = 6, OddsRatio = 1m/1000000m, ProjectedPrize = 72000000 },
+                    new PrizeTier{ MainMatches = 5, OddsRatio = 1m/111111m, ProjectedPrize = 2500000 },
+                    new PrizeTier{ MainMatches = 4, OddsRatio = 1m/11111m, ProjectedPrize = 250000 },
+                    new PrizeTier{ MainMatches = 3, OddsRatio = 1m/1111m, ProjectedPrize = 25000 },
+                    new PrizeTier{ MainMatches = 2, OddsRatio = 1m/111m, ProjectedPrize = 2500 }
                 }
             }
         };

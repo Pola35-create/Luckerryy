@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Luckerryy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba5e3059894b42658025cac4862cad111fc88eb8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d825c797454923bb1823416528364609396f82c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Luckerryy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Luckerryy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
