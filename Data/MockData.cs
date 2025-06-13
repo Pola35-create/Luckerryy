@@ -1,159 +1,164 @@
-public static class MockData
+using Luckerryy.Models;
+
+namespace Luckerryy.Data
 {
-    public static List<Lottery> GetLotteries()
+    public static class MockData
     {
-        return new List<Lottery>
+        public static List<Lottery> GetLotteries()
         {
-            new Lottery
+            return new List<Lottery>
             {
-                Name = "Ötöslottó",
-                TicketPrice = 400,
-                Schedule = new DrawSchedule
+                new Lottery
                 {
-                    Days = new List<DayOfWeek> {DayOfWeek.Saturday},
-                    DrawTime = new TimeSpan(18, 45, 0),
-                    Deadline = new TimeSpan(17, 30, 0)
-                },
-                NumberPools = new List<NumberPool>
-                {
-                    new NumberPool
+                    Name = "Ötöslottó",
+                    TicketPrice = 400,
+                    Schedule = new DrawSchedule
                     {
-                        Name = "Főszámok",
-                        NumbersToPick = 5,
-                        TotalNumberRange = 90
-                    }
-                },
-                PrizeTiers = new List<PrizeTier>
-                {
-                    new PrizeTier{ MainMatches = 5, OddsRatio = 1m/43949268m, ProjectedPrize = 2966000000 },
-                    new PrizeTier{ MainMatches = 4, OddsRatio = 1m/103410m, ProjectedPrize = 1376935 },
-                    new PrizeTier{ MainMatches = 3, OddsRatio = 1m/1231m, ProjectedPrize = 15845 },
-                    new PrizeTier{ MainMatches = 2, OddsRatio = 1m/44m, ProjectedPrize = 2460 }
-                }
-            },
-            new Lottery
-            {
-                Name = "Hatoslottó",
-                TicketPrice = 400,
-                Schedule = new DrawSchedule
-                {
-                    Days = new List<DayOfWeek> {DayOfWeek.Sunday},
-                    DrawTime = new TimeSpan(16, 00, 0),
-                    Deadline = new TimeSpan(14, 30, 0)
-                },
-                NumberPools = new List<NumberPool>
-                {
-                    new NumberPool
-                    {
-                        Name = "Főszámok",
-                        NumbersToPick = 6,
-                        TotalNumberRange = 45
-                    }
-                },
-                PrizeTiers = new List<PrizeTier>
-                {
-                    new PrizeTier{ MainMatches = 6, OddsRatio = 1m/8145060m, ProjectedPrize = 221000000 },
-                    new PrizeTier{ MainMatches = 5, OddsRatio = 1m/34808m, ProjectedPrize = 237300 },
-                    new PrizeTier{ MainMatches = 4, OddsRatio = 1m/733m, ProjectedPrize = 6220 },
-                    new PrizeTier{ MainMatches = 3, OddsRatio = 1m/45m, ProjectedPrize = 2705 }
-                }
-            },
-            new Lottery
-            {
-                Name = "Skandinávlottó",
-                TicketPrice = 400,
-                Schedule = new DrawSchedule
-                {
-                    Days = new List<DayOfWeek> {DayOfWeek.Wednesday},
-                    DrawTime = new TimeSpan(20, 45, 0),
-                    Deadline = new TimeSpan(19, 00, 0)
-                },
-                NumberPools = new List<NumberPool>
-                {
-                    new NumberPool
-                    {
-                        Name = "Főszámok",
-                        NumbersToPick = 7,
-                        TotalNumberRange = 35
-                    }
-                },
-                PrizeTiers = new List<PrizeTier>
-                {
-                    new PrizeTier{ MainMatches = 7, OddsRatio = 1m/3362260m, ProjectedPrize = 70000000 },
-                    new PrizeTier{ MainMatches = 6, OddsRatio = 1m/17155m, ProjectedPrize = 197830 },
-                    new PrizeTier{ MainMatches = 5, OddsRatio = 1m/424m, ProjectedPrize = 6060 },
-                    new PrizeTier{ MainMatches = 4, OddsRatio = 1m/30m, ProjectedPrize = 2425 }
-                }
-            },
-            new Lottery
-            {
-                Name = "Eurojackpot",
-                TicketPrice = 860,
-                Schedule = new DrawSchedule
-                {
-                    Days = new List<DayOfWeek> {DayOfWeek.Tuesday, DayOfWeek.Friday},
-                    DrawTime = new TimeSpan(21, 00, 0),
-                    Deadline = new TimeSpan(19, 00, 0)
-                },
-                NumberPools = new List<NumberPool>
-                {
-                    new NumberPool
-                    {
-                        Name = "Főszámok",
-                        NumbersToPick = 5,
-                        TotalNumberRange = 50,
+                        Days = new List<DayOfWeek> {DayOfWeek.Saturday},
+                        DrawTime = new TimeSpan(18, 45, 0),
+                        Deadline = new TimeSpan(17, 30, 0)
                     },
-                    new NumberPool
+                    NumberPools = new List<NumberPool>
                     {
-                        Name = "Mellékszámok",
-                        NumbersToPick = 2,
-                        TotalNumberRange = 12
+                        new NumberPool
+                        {
+                            Name = "Főszámok",
+                            NumbersToPick = 5,
+                            TotalNumberRange = 90
+                        }
                     },
-                },
-                PrizeTiers = new List<PrizeTier>
-                {
-                    new PrizeTier{ MainMatches = 5, ExtraMatches = 2, OddsRatio = 1m/139838160m, ProjectedPrize = 8800000000 },
-                    new PrizeTier{ MainMatches = 5, ExtraMatches = 1, OddsRatio = 1m/6991908m, ProjectedPrize = 732181883 },
-                    new PrizeTier{ MainMatches = 5, ExtraMatches = 0, OddsRatio = 1m/3107515m, ProjectedPrize = 49124190 },
-                    new PrizeTier{ MainMatches = 4, ExtraMatches = 2, OddsRatio = 1m/621503m, ProjectedPrize = 2278955 },
-                    new PrizeTier{ MainMatches = 4, ExtraMatches = 1, OddsRatio = 1m/31075m, ProjectedPrize = 102855 },
-                    new PrizeTier{ MainMatches = 3, ExtraMatches = 2, OddsRatio = 1m/14125m, ProjectedPrize = 66950 },
-                    new PrizeTier{ MainMatches = 4, ExtraMatches = 0, OddsRatio = 1m/13811m, ProjectedPrize = 34355 },
-                    new PrizeTier{ MainMatches = 2, ExtraMatches = 2, OddsRatio = 1m/985m, ProjectedPrize = 11910 },
-                    new PrizeTier{ MainMatches = 3, ExtraMatches = 1, OddsRatio = 1m/706m, ProjectedPrize = 7010 },
-                    new PrizeTier{ MainMatches = 3, ExtraMatches = 0, OddsRatio = 1m/314m, ProjectedPrize = 5975 },
-                    new PrizeTier{ MainMatches = 1, ExtraMatches = 2, OddsRatio = 1m/188m, ProjectedPrize = 5975 },
-                    new PrizeTier{ MainMatches = 2, ExtraMatches = 1, OddsRatio = 1m/49m, ProjectedPrize = 3870 },
-                }
-            },
-            new Lottery
-            {
-                Name = "Joker",
-                TicketPrice = 400,
-                Schedule = new DrawSchedule
-                {
-                    Days = new List<DayOfWeek> {DayOfWeek.Saturday},
-                    DrawTime = new TimeSpan(18, 45, 0),
-                    Deadline = new TimeSpan(17, 30, 0)
-                },
-                NumberPools = new List<NumberPool>
-                {
-                    new NumberPool
+                    PrizeTiers = new List<PrizeTier>
                     {
-                        Name = "Főszámok",
-                        NumbersToPick = 6,
-                        TotalNumberRange = 60
+                        new PrizeTier{ MainMatches = 5, OddsRatio = 1m/43949268m, ProjectedPrize = 2966000000 },
+                        new PrizeTier{ MainMatches = 4, OddsRatio = 1m/103410m, ProjectedPrize = 1376935 },
+                        new PrizeTier{ MainMatches = 3, OddsRatio = 1m/1231m, ProjectedPrize = 15845 },
+                        new PrizeTier{ MainMatches = 2, OddsRatio = 1m/44m, ProjectedPrize = 2460 }
                     }
                 },
-                PrizeTiers = new List<PrizeTier>
+                new Lottery
                 {
-                    new PrizeTier{ MainMatches = 6, OddsRatio = 1m/1000000m, ProjectedPrize = 72000000 },
-                    new PrizeTier{ MainMatches = 5, OddsRatio = 1m/111111m, ProjectedPrize = 2500000 },
-                    new PrizeTier{ MainMatches = 4, OddsRatio = 1m/11111m, ProjectedPrize = 250000 },
-                    new PrizeTier{ MainMatches = 3, OddsRatio = 1m/1111m, ProjectedPrize = 25000 },
-                    new PrizeTier{ MainMatches = 2, OddsRatio = 1m/111m, ProjectedPrize = 2500 }
+                    Name = "Hatoslottó",
+                    TicketPrice = 400,
+                    Schedule = new DrawSchedule
+                    {
+                        Days = new List<DayOfWeek> {DayOfWeek.Sunday},
+                        DrawTime = new TimeSpan(16, 00, 0),
+                        Deadline = new TimeSpan(14, 30, 0)
+                    },
+                    NumberPools = new List<NumberPool>
+                    {
+                        new NumberPool
+                        {
+                            Name = "Főszámok",
+                            NumbersToPick = 6,
+                            TotalNumberRange = 45
+                        }
+                    },
+                    PrizeTiers = new List<PrizeTier>
+                    {
+                        new PrizeTier{ MainMatches = 6, OddsRatio = 1m/8145060m, ProjectedPrize = 221000000 },
+                        new PrizeTier{ MainMatches = 5, OddsRatio = 1m/34808m, ProjectedPrize = 237300 },
+                        new PrizeTier{ MainMatches = 4, OddsRatio = 1m/733m, ProjectedPrize = 6220 },
+                        new PrizeTier{ MainMatches = 3, OddsRatio = 1m/45m, ProjectedPrize = 2705 }
+                    }
+                },
+                new Lottery
+                {
+                    Name = "Skandinávlottó",
+                    TicketPrice = 400,
+                    Schedule = new DrawSchedule
+                    {
+                        Days = new List<DayOfWeek> {DayOfWeek.Wednesday},
+                        DrawTime = new TimeSpan(20, 45, 0),
+                        Deadline = new TimeSpan(19, 00, 0)
+                    },
+                    NumberPools = new List<NumberPool>
+                    {
+                        new NumberPool
+                        {
+                            Name = "Főszámok",
+                            NumbersToPick = 7,
+                            TotalNumberRange = 35
+                        }
+                    },
+                    PrizeTiers = new List<PrizeTier>
+                    {
+                        new PrizeTier{ MainMatches = 7, OddsRatio = 1m/3362260m, ProjectedPrize = 70000000 },
+                        new PrizeTier{ MainMatches = 6, OddsRatio = 1m/17155m, ProjectedPrize = 197830 },
+                        new PrizeTier{ MainMatches = 5, OddsRatio = 1m/424m, ProjectedPrize = 6060 },
+                        new PrizeTier{ MainMatches = 4, OddsRatio = 1m/30m, ProjectedPrize = 2425 }
+                    }
+                },
+                new Lottery
+                {
+                    Name = "Eurojackpot",
+                    TicketPrice = 860,
+                    Schedule = new DrawSchedule
+                    {
+                        Days = new List<DayOfWeek> {DayOfWeek.Tuesday, DayOfWeek.Friday},
+                        DrawTime = new TimeSpan(21, 00, 0),
+                        Deadline = new TimeSpan(19, 00, 0)
+                    },
+                    NumberPools = new List<NumberPool>
+                    {
+                        new NumberPool
+                        {
+                            Name = "Főszámok",
+                            NumbersToPick = 5,
+                            TotalNumberRange = 50,
+                        },
+                        new NumberPool
+                        {
+                            Name = "Mellékszámok",
+                            NumbersToPick = 2,
+                            TotalNumberRange = 12
+                        },
+                    },
+                    PrizeTiers = new List<PrizeTier>
+                    {
+                        new PrizeTier{ MainMatches = 5, ExtraMatches = 2, OddsRatio = 1m/139838160m, ProjectedPrize = 8800000000 },
+                        new PrizeTier{ MainMatches = 5, ExtraMatches = 1, OddsRatio = 1m/6991908m, ProjectedPrize = 732181883 },
+                        new PrizeTier{ MainMatches = 5, ExtraMatches = 0, OddsRatio = 1m/3107515m, ProjectedPrize = 49124190 },
+                        new PrizeTier{ MainMatches = 4, ExtraMatches = 2, OddsRatio = 1m/621503m, ProjectedPrize = 2278955 },
+                        new PrizeTier{ MainMatches = 4, ExtraMatches = 1, OddsRatio = 1m/31075m, ProjectedPrize = 102855 },
+                        new PrizeTier{ MainMatches = 3, ExtraMatches = 2, OddsRatio = 1m/14125m, ProjectedPrize = 66950 },
+                        new PrizeTier{ MainMatches = 4, ExtraMatches = 0, OddsRatio = 1m/13811m, ProjectedPrize = 34355 },
+                        new PrizeTier{ MainMatches = 2, ExtraMatches = 2, OddsRatio = 1m/985m, ProjectedPrize = 11910 },
+                        new PrizeTier{ MainMatches = 3, ExtraMatches = 1, OddsRatio = 1m/706m, ProjectedPrize = 7010 },
+                        new PrizeTier{ MainMatches = 3, ExtraMatches = 0, OddsRatio = 1m/314m, ProjectedPrize = 5975 },
+                        new PrizeTier{ MainMatches = 1, ExtraMatches = 2, OddsRatio = 1m/188m, ProjectedPrize = 5975 },
+                        new PrizeTier{ MainMatches = 2, ExtraMatches = 1, OddsRatio = 1m/49m, ProjectedPrize = 3870 },
+                    }
+                },
+                new Lottery
+                {
+                    Name = "Joker",
+                    TicketPrice = 400,
+                    Schedule = new DrawSchedule
+                    {
+                        Days = new List<DayOfWeek> {DayOfWeek.Saturday},
+                        DrawTime = new TimeSpan(18, 45, 0),
+                        Deadline = new TimeSpan(17, 30, 0)
+                    },
+                    NumberPools = new List<NumberPool>
+                    {
+                        new NumberPool
+                        {
+                            Name = "Főszámok",
+                            NumbersToPick = 6,
+                            TotalNumberRange = 60
+                        }
+                    },
+                    PrizeTiers = new List<PrizeTier>
+                    {
+                        new PrizeTier{ MainMatches = 6, OddsRatio = 1m/1000000m, ProjectedPrize = 72000000 },
+                        new PrizeTier{ MainMatches = 5, OddsRatio = 1m/111111m, ProjectedPrize = 2500000 },
+                        new PrizeTier{ MainMatches = 4, OddsRatio = 1m/11111m, ProjectedPrize = 250000 },
+                        new PrizeTier{ MainMatches = 3, OddsRatio = 1m/1111m, ProjectedPrize = 25000 },
+                        new PrizeTier{ MainMatches = 2, OddsRatio = 1m/111m, ProjectedPrize = 2500 }
+                    }
                 }
-            }
-        };
+            };
+        }
     }
 }
