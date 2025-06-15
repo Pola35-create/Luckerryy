@@ -12,6 +12,8 @@ namespace Luckerryy.Data
                 {
                     Name = "Ötöslottó",
                     TicketPrice = 400,
+                    X = 170,
+                    Y = 62,
                     Schedule = new DrawSchedule
                     {
                         Days = new List<DayOfWeek> {DayOfWeek.Saturday},
@@ -38,6 +40,8 @@ namespace Luckerryy.Data
                 new Lottery
                 {
                     Name = "Hatoslottó",
+                    X = 923,
+                    Y = 62,
                     TicketPrice = 400,
                     Schedule = new DrawSchedule
                     {
@@ -65,6 +69,8 @@ namespace Luckerryy.Data
                 new Lottery
                 {
                     Name = "Skandinávlottó",
+                    X = 170,
+                    Y = 313,
                     TicketPrice = 400,
                     Schedule = new DrawSchedule
                     {
@@ -92,6 +98,8 @@ namespace Luckerryy.Data
                 new Lottery
                 {
                     Name = "Eurojackpot",
+                    X = 923,
+                    Y = 313,
                     TicketPrice = 860,
                     Schedule = new DrawSchedule
                     {
@@ -133,6 +141,8 @@ namespace Luckerryy.Data
                 new Lottery
                 {
                     Name = "Joker",
+                    X = 546,
+                    Y = 545,
                     TicketPrice = 400,
                     Schedule = new DrawSchedule
                     {

@@ -6,11 +6,6 @@ namespace Luckerryy.ViewModels
 {
     public class PrizeTierViewModel
     {
-        public ObservableCollection<Lottery> Lotteries { get; }
-        public PrizeTierViewModel()
-        {
-            Lotteries = new ObservableCollection<Lottery>(MockData.GetLotteries());
-        }
         public PrizeTier Tier { get; set; } = new();
         public Lottery Lottery { get; set; } = new();
 

@@ -8,15 +8,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Luckerryy.Models;
 using Luckerryy.ViewModels;
 
-namespace Luckerryy.Views;
-
-public partial class MainWindow : Window
+namespace Luckerryy.Views
 {
-    public MainWindow()
+    public partial class MainWindow : Window
     {
-        InitializeComponent();
-        DataContext = new PrizeTierViewModel();
+        public MainWindow()
+        {
+            InitializeComponent();
+            DataContext = new MainViewModel();
+        }
+
+        private void LotteryBox_Click(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Ötöslottó details page coming soon!");
+        }
     }
 }
