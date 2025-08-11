@@ -89,9 +89,10 @@ Luckerryy/
 1. Clone the repository:
    ```bash
    git clone https://github.com/Pola35-create/Luckerryy.git
-```
 2. Open Luckerryy.sln in Visual Studio 2022
 3. Build and run (F5)
+
+---
 
 ## 💡 License
 
