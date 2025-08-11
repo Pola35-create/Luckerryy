@@ -31,7 +31,7 @@ namespace Luckerryy.Data
                     },
                     PrizeTiers = new List<PrizeTier>
                     {
-                        new PrizeTier{ MainMatches = 5, OddsRatio = 1m/43949268m, ProjectedPrize = 2966000000 },
+                        new PrizeTier{ MainMatches = 5, OddsRatio = 1m/43949268m, ProjectedPrize = 327000000 },
                         new PrizeTier{ MainMatches = 4, OddsRatio = 1m/103410m, ProjectedPrize = 1376935 },
                         new PrizeTier{ MainMatches = 3, OddsRatio = 1m/1231m, ProjectedPrize = 15845 },
                         new PrizeTier{ MainMatches = 2, OddsRatio = 1m/44m, ProjectedPrize = 2460 }
@@ -60,7 +60,7 @@ namespace Luckerryy.Data
                     },
                     PrizeTiers = new List<PrizeTier>
                     {
-                        new PrizeTier{ MainMatches = 6, OddsRatio = 1m/8145060m, ProjectedPrize = 221000000 },
+                        new PrizeTier{ MainMatches = 6, OddsRatio = 1m/8145060m, ProjectedPrize = 1251000000 },
                         new PrizeTier{ MainMatches = 5, OddsRatio = 1m/34808m, ProjectedPrize = 237300 },
                         new PrizeTier{ MainMatches = 4, OddsRatio = 1m/733m, ProjectedPrize = 6220 },
                         new PrizeTier{ MainMatches = 3, OddsRatio = 1m/45m, ProjectedPrize = 2705 }
@@ -89,7 +89,7 @@ namespace Luckerryy.Data
                     },
                     PrizeTiers = new List<PrizeTier>
                     {
-                        new PrizeTier{ MainMatches = 7, OddsRatio = 1m/3362260m, ProjectedPrize = 70000000 },
+                        new PrizeTier{ MainMatches = 7, OddsRatio = 1m/3362260m, ProjectedPrize = 65000000 },
                         new PrizeTier{ MainMatches = 6, OddsRatio = 1m/17155m, ProjectedPrize = 197830 },
                         new PrizeTier{ MainMatches = 5, OddsRatio = 1m/424m, ProjectedPrize = 6060 },
                         new PrizeTier{ MainMatches = 4, OddsRatio = 1m/30m, ProjectedPrize = 2425 }
@@ -124,7 +124,7 @@ namespace Luckerryy.Data
                     },
                     PrizeTiers = new List<PrizeTier>
                     {
-                        new PrizeTier{ MainMatches = 5, ExtraMatches = 2, OddsRatio = 1m/139838160m, ProjectedPrize = 8800000000 },
+                        new PrizeTier{ MainMatches = 5, ExtraMatches = 2, OddsRatio = 1m/139838160m, ProjectedPrize = 10300000000 },
                         new PrizeTier{ MainMatches = 5, ExtraMatches = 1, OddsRatio = 1m/6991908m, ProjectedPrize = 732181883 },
                         new PrizeTier{ MainMatches = 5, ExtraMatches = 0, OddsRatio = 1m/3107515m, ProjectedPrize = 49124190 },
                         new PrizeTier{ MainMatches = 4, ExtraMatches = 2, OddsRatio = 1m/621503m, ProjectedPrize = 2278955 },
@@ -161,7 +161,7 @@ namespace Luckerryy.Data
                     },
                     PrizeTiers = new List<PrizeTier>
                     {
-                        new PrizeTier{ MainMatches = 6, OddsRatio = 1m/1000000m, ProjectedPrize = 72000000 },
+                        new PrizeTier{ MainMatches = 6, OddsRatio = 1m/1000000m, ProjectedPrize = 156000000 },
                         new PrizeTier{ MainMatches = 5, OddsRatio = 1m/111111m, ProjectedPrize = 2500000 },
                         new PrizeTier{ MainMatches = 4, OddsRatio = 1m/11111m, ProjectedPrize = 250000 },
                         new PrizeTier{ MainMatches = 3, OddsRatio = 1m/1111m, ProjectedPrize = 25000 },

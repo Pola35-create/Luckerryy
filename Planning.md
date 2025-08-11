@@ -25,5 +25,4 @@
 
 ### 🧩 Key App Functions
 - Display full info for each lottery
-- Compare lotteries based on odds vs. cost vs. prize
-- Sort and filter by criteria (best value, best odds, highest jackpot)
+- Mark the "Bests" (Best Value, Highest Jackpot, Safest Option)

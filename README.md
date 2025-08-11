@@ -1,5 +1,5 @@
 # 💸 Luckerryy
-
+![Luckerryy Screenshot](docs/screenshot.png)
 **Luckerryy** is a desktop application that helps users evaluate and compare the available lottery games in Hungary based on statistical odds, prize tiers and ticket prices -- aiming to identify the best-value options.
 
 ---
@@ -11,7 +11,6 @@
 - Show prize money breakdown per tier
 - Compare value of each lottery based on odds, prizes and cost
 - Provide an intuitive desktop UI for analysis and interaction
-- (Future) Expand to mobile version
 
 ---
 
@@ -19,7 +18,7 @@
 
 - **Language**: C#
 - **Framework**: .NET (WPF for desktop UI)
-- **IDE**: Visual Studio Code
+- **IDE**: Visual Studio 2022
 - **Version Control**: Git & GitHub
 
 ---
@@ -54,13 +53,10 @@ Luckerryy/
 
 ## 📈 Planned Features
 
-- [ ] Load all Hungarian lottery types
-- [ ] Display odds and prize tiers
+- [X] Load all Hungarian lottery types
+- [ ] Display odds, prize tiers and value
 - [ ] Compare lotteries using value metrics
-- [ ] Allow user customization and filters
-- [ ] Refresh or update data (scraper/API)
-- [ ] Save/export suggestions
-- [ ] Mobile version (Xamarin/MAUI or Flutter)
+- [ ] Refresh or update data (scraper)
 
 ---
 
@@ -73,20 +69,30 @@ Luckerryy/
 
 ## 📆 Timeline
 
-| Phase        | Status          | Target         |
-|--------------|-----------------|----------------|
-| Repo Setup   | ✅ Done         | May 2025       |
-| Planning     | 🔄 Ongoing      | May–June 2025  |
-| MVP Build    | ⏳ Not Started  | June 2025      |
-| UI Polish    | ⏳ Not Started  | July 2025      |
-| Mobile Port  | ⏳ Future       | TBD            |
+| Phase          | Status          | Target         |
+|----------------|-----------------|----------------|
+| Repo Setup     | ✅ Done         | May 2025       |
+| Planning       | ✅ Done         | May–June 2025  |
+| MVP Build      | ✅ Done         | June 2025      |
+| Automatization | 🔄️ Ongoing      | August 2025    |
+| UI Polish      | 🔄️ Ongoing      | August 2025    |
 
 ---
 
 ## 🗂️ Project Documentation
 
-- [📋 Project Planning Documentation](Planning.md)
+- [📋 Project Planning Documentation](./Planning.md)
+
+---
+
+## 🚀 How to Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Pola35-create/Luckerryy.git
+```
+2. Open Luckerryy.sln in Visual Studio 2022
+3. Build and run (F5)
 
 ## 💡 License
 
-This project is currently for learning and portfolio purposes. A license will be added later.
+This project is licensed under the [MIT License](./LICENSE).
