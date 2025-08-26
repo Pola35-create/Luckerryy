@@ -1,9 +1,21 @@
 using Luckerryy.Models;
+using Luckerryy.Utils;
+using System;
+using System.Collections.Generic;
 
 namespace Luckerryy.Services
 {
     public class LotteryService : ILotteryService
     {
+        private readonly LotteryScraper _scraper;
+        private Dictionary<string, decimal> _jackpotCache;
+        private DateTime _lastUpdated;
+        public LotteryService()
+        {
+            _scraper = new LotteryScraper();
+            _jackpotCache = new Dictionary<string, decimal>();
+            _lastUpdated = DateTime.MinValue;
+        }
         public decimal? CalculatePercentageEV(PrizeTier tier, Lottery lottery)
         {
             if (lottery.TicketPrice == 0 || !tier.EstimatedValue.HasValue)
@@ -16,5 +28,22 @@ namespace Luckerryy.Services
             var nextDeadLine = lottery.Schedule.NextDraw.Date + lottery.Schedule.Deadline;
             return nextDeadLine - DateTime.Now;
         }
+        public void RefreshData()
+        {
+            _jackpotCache.Clear();
+
+            string otosJackpotText = _scraper.ScrapeOtosLotto();
+            decimal otosJackpot = LotteryUtils.ParseJackpot(otosJackpotText);
+            _jackpotCache["ötöslottó"] = otosJackpot;
+
+            _lastUpdated = DateTime.Now;
+        }
+        public decimal GetJackpot(string lotteryKey)
+        {
+            if (_jackpotCache.ContainsKey(lotteryKey))
+                return _jackpotCache[lotteryKey];
+            throw new Exception($"Jackpot for {lotteryKey} not available. Did you call RefreshData()?");
+        }
+        public DateTime LastUpdated => _lastUpdated;
     }
 }
