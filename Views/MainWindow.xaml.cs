@@ -19,7 +19,7 @@ namespace Luckerryy.Views
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            DataContext = new MainViewModel(new LotteryService());
         }
 
         private void LotteryBox_Click(object sender, MouseButtonEventArgs e)

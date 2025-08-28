@@ -18,6 +18,8 @@ namespace Luckerryy.Data
                 {
                     Name = "Ötöslottó",
                     TicketPrice = 400,
+                    Jackpot = jackpot,
+                    TopTierOddsRatio = 1m/43949268m,
                     X = 170,
                     Y = 62,
                     Schedule = new DrawSchedule
@@ -37,10 +39,9 @@ namespace Luckerryy.Data
                     },
                     PrizeTiers = new List<PrizeTier>
                     {
-                        new PrizeTier{ MainMatches = 5, OddsRatio = 1m/43949268m, ProjectedPrize = jackpot },
-                        new PrizeTier{ MainMatches = 4, OddsRatio = 1m/103410m, ProjectedPrize = 1376935 },
-                        new PrizeTier{ MainMatches = 3, OddsRatio = 1m/1231m, ProjectedPrize = 15845 },
-                        new PrizeTier{ MainMatches = 2, OddsRatio = 1m/44m, ProjectedPrize = 2460 }
+                        new PrizeTier{ MainMatches = 4, OddsRatio = 1m/103410m, ProjectedPrize = 1993021 },
+                        new PrizeTier{ MainMatches = 3, OddsRatio = 1m/1231m, ProjectedPrize = 22509 },
+                        new PrizeTier{ MainMatches = 2, OddsRatio = 1m/44m, ProjectedPrize = 3108 }
                     }
                 },
                 new Lottery

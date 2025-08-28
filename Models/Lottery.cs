@@ -6,7 +6,8 @@ namespace Luckerryy.Models
     {
         public string Name { get; set; } = string.Empty;
         public decimal TicketPrice { get; set; }
-        public decimal Jackpot => PrizeTiers?.Any() == true ? PrizeTiers.Max(pt => pt.ProjectedPrize) : 0m;
+        public decimal Jackpot { get; set; }
+        public decimal TopTierOddsRatio { get; set; }
         public decimal EV => PrizeTiers?.Sum(pt => pt.ProjectedPrize * pt.OddsRatio) ?? 0;
         public DrawSchedule Schedule { get; set; } = new();
         public List<NumberPool> NumberPools { get; set; } = new();
