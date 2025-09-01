@@ -8,7 +8,15 @@ namespace Luckerryy.Models
         public decimal TicketPrice { get; set; }
         public decimal Jackpot { get; set; }
         public decimal TopTierOddsRatio { get; set; }
-        public decimal EV => PrizeTiers?.Sum(pt => pt.ProjectedPrize * pt.OddsRatio) ?? 0;
+        public decimal EV
+        {
+            get
+            {
+                decimal lowerTiersEV = PrizeTiers?.Sum(pt => pt.ProjectedPrize * pt.OddsRatio) ?? 0;
+                decimal jackpotEV = Jackpot * TopTierOddsRatio;
+                return lowerTiersEV + jackpotEV;
+            }
+        }
         public DrawSchedule Schedule { get; set; } = new();
         public List<NumberPool> NumberPools { get; set; } = new();
         public List<PrizeTier> PrizeTiers { get; set; } = new();
