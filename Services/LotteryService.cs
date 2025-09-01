@@ -33,8 +33,15 @@ namespace Luckerryy.Services
             _jackpotCache.Clear();
 
             string otosJackpotText = _scraper.ScrapeOtosLotto();
-            decimal otosJackpot = LotteryUtils.ParseJackpot(otosJackpotText);
-            _jackpotCache["ötöslottó"] = otosJackpot;
+            _jackpotCache["ötöslottó"] = LotteryUtils.ParseJackpot(otosJackpotText);
+            string hatosJackpotText = _scraper.ScrapeHatosLotto();
+            _jackpotCache["hatoslottó"] = LotteryUtils.ParseJackpot(hatosJackpotText);
+            string skandiJackpotText = _scraper.ScrapeSkandiLotto();
+            _jackpotCache["skandinávlottó"] = LotteryUtils.ParseJackpot(skandiJackpotText);
+            string euroJackpotText = _scraper.ScrapeEurojackpot();
+            _jackpotCache["eurojackpot"] = LotteryUtils.ParseJackpot(euroJackpotText);
+            string jokerJackpotText = _scraper.ScrapeJoker();
+            _jackpotCache["joker"] = LotteryUtils.ParseJackpot(jokerJackpotText);
 
             _lastUpdated = DateTime.Now;
         }
