@@ -1,21 +1,40 @@
 using System.Windows.Media;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Luckerryy.Models
 {
-    public class Lottery
+    public class Lottery : INotfiyPropertyChanged
     {
+        private decimal _jackpot;
         public string Name { get; set; } = string.Empty;
         public decimal TicketPrice { get; set; }
-        public decimal Jackpot { get; set; }
-        public decimal TopTierOddsRatio { get; set; }
-        public decimal EV
+        public decimal Jackpot 
         {
-            get
+            get => _jackpot;
+            private set
             {
-                decimal lowerTiersEV = PrizeTiers?.Sum(pt => pt.ProjectedPrize * pt.OddsRatio) ?? 0;
-                decimal jackpotEV = Jackpot * TopTierOddsRatio;
-                return lowerTiersEV + jackpotEV;
+                if (_jackpot != value)
+                {
+                    _jackpot = value;
+                    OnPropertyChanged();
+                    OnpropertyChanged(nameof(EV));
+                }
             }
+        }
+        public decimal TopTierOddsRatio { get; set; }
+        public decimal EV =>
+            (PrizeTiers?.Sum(pt => pt.ProjectedPrize * pt.OddsRatio) ?? 0) +
+            (Jackpot * TopTierOddsRatio);
+        public void UpdateJackpot(decimal jackpot)
+        {
+            Jackpot = jackpot;
+        }
+        public event PropertyChangedEventHandler? PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         public DrawSchedule Schedule { get; set; } = new();
         public List<NumberPool> NumberPools { get; set; } = new();

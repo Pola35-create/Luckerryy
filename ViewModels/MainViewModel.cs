@@ -12,17 +12,16 @@ namespace Luckerryy.ViewModels
         public ObservableCollection<Lottery> Lotteries { get; }
         public MainViewModel(ILotteryService lotteryService)
         {
-            _lotteryService = lotteryService;
-            var lotteries = MockData.GetLotteries();
-            _lotteryService.RefreshData();
-            foreach (var lottery in lotteries)
+            Lotteries = new ObservableCollection<Lottery>(MockData.GetLotteries());
+            LoadJackpotsAsync(lotteryService);
+        }
+        private async void LoadJackpotsAsync(ILotteryService lotteryService)
+        {
+            foreach (var lottery in Lotteries)
             {
-                if (lottery.Name == "Ötöslottó")
-                {
-                    lottery.Jackpot = _lotteryService.GetJackpot("ötöslottó");
-                }
+                var jackpot = await lotteryService.GetJackpotAsync(lottery.Name);
+                lottery.UpdateJackpot(jackpot);
             }
-            Lotteries = new ObservableCollection<Lottery>(lotteries);
         }
         public DateTime LastUpdated => _lotteryService.LastUpdated;
     }

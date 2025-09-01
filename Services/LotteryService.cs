@@ -45,11 +45,20 @@ namespace Luckerryy.Services
 
             _lastUpdated = DateTime.Now;
         }
-        public decimal GetJackpot(string lotteryKey)
+        public async Task<decimal> GetJackpotAsync(string lotteryName)
         {
-            if (_jackpotCache.ContainsKey(lotteryKey))
-                return _jackpotCache[lotteryKey];
-            throw new Exception($"Jackpot for {lotteryKey} not available. Did you call RefreshData()?");
+            return await Task.Run(() =>
+            {
+                return lotteryName.ToLower() switch
+                {
+                    "ötöslottó" => LotteryUtils.ParseJackpot(_scraper.ScrapeOtosLotto()),
+                    "hatoslottó" => LotteryUtils.ParseJackpot(_scraper.ScrapeHatosLotto()),
+                    "skandinávlottó" => LotteryUtils.ParseJackpot(_scraper.ScrapeSkandiLotto()),
+                    "eurojackpot" => LotteryUtils.ParseJackpot(_scraper.ScrapeEurojackpot()),
+                    "joker" => LotteryUtils.ParseJackpot(_scraper.ScrapeJoker()),
+                    _ => 0
+                };
+            });
         }
         public DateTime LastUpdated => _lastUpdated;
     }

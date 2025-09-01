@@ -8,17 +8,12 @@ namespace Luckerryy.Data
     {
         public static List<Lottery> GetLotteries()
         {
-            var scraper = new LotteryScraper();
-            string jackpotText = scraper.ScrapeOtosLotto();
-            decimal jackpot = LotteryUtils.ParseJackpot(jackpotText);
-
             return new List<Lottery>
             {
                 new Lottery
                 {
                     Name = "Ötöslottó",
                     TicketPrice = 400,
-                    Jackpot = jackpot,
                     TopTierOddsRatio = 1m/43949268m,
                     X = 170,
                     Y = 62,
@@ -50,7 +45,6 @@ namespace Luckerryy.Data
                     X = 923,
                     Y = 62,
                     TicketPrice = 400,
-                    Jackpot = jackpot,
                     TopTierOddsRatio = 1m/8145060m,
                     Schedule = new DrawSchedule
                     {
@@ -80,7 +74,6 @@ namespace Luckerryy.Data
                     X = 170,
                     Y = 313,
                     TicketPrice = 400,
-                    Jackpot = jackpot,
                     TopTierOddsRatio = 1m/3362260m,
                     Schedule = new DrawSchedule
                     {
@@ -110,7 +103,6 @@ namespace Luckerryy.Data
                     X = 923,
                     Y = 313,
                     TicketPrice = 860,
-                    Jackpot = jackpot,
                     TopTierOddsRatio = 1m/139838160m,
                     Schedule = new DrawSchedule
                     {
@@ -154,7 +146,6 @@ namespace Luckerryy.Data
                     X = 546,
                     Y = 545,
                     TicketPrice = 400,
-                    Jackpot = jackpot,
                     TopTierOddsRatio = 1m/1000000m,
                     Schedule = new DrawSchedule
                     {
