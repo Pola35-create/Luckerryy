@@ -50,6 +50,8 @@ namespace Luckerryy.Data
                     X = 923,
                     Y = 62,
                     TicketPrice = 400,
+                    Jackpot = jackpot,
+                    TopTierOddsRatio = 1m/8145060m,
                     Schedule = new DrawSchedule
                     {
                         Days = new List<DayOfWeek> {DayOfWeek.Sunday},
@@ -67,10 +69,9 @@ namespace Luckerryy.Data
                     },
                     PrizeTiers = new List<PrizeTier>
                     {
-                        new PrizeTier{ MainMatches = 6, OddsRatio = 1m/8145060m, ProjectedPrize = 230000000 },
-                        new PrizeTier{ MainMatches = 5, OddsRatio = 1m/34808m, ProjectedPrize = 237300 },
-                        new PrizeTier{ MainMatches = 4, OddsRatio = 1m/733m, ProjectedPrize = 6220 },
-                        new PrizeTier{ MainMatches = 3, OddsRatio = 1m/45m, ProjectedPrize = 2705 }
+                        new PrizeTier{ MainMatches = 5, OddsRatio = 1m/34808m, ProjectedPrize = 361380 },
+                        new PrizeTier{ MainMatches = 4, OddsRatio = 1m/733m, ProjectedPrize = 7334 },
+                        new PrizeTier{ MainMatches = 3, OddsRatio = 1m/45m, ProjectedPrize = 2801 }
                     }
                 },
                 new Lottery
@@ -79,6 +80,8 @@ namespace Luckerryy.Data
                     X = 170,
                     Y = 313,
                     TicketPrice = 400,
+                    Jackpot = jackpot,
+                    TopTierOddsRatio = 1m/3362260m,
                     Schedule = new DrawSchedule
                     {
                         Days = new List<DayOfWeek> {DayOfWeek.Wednesday},
@@ -96,10 +99,9 @@ namespace Luckerryy.Data
                     },
                     PrizeTiers = new List<PrizeTier>
                     {
-                        new PrizeTier{ MainMatches = 7, OddsRatio = 1m/3362260m, ProjectedPrize = 210000000 },
-                        new PrizeTier{ MainMatches = 6, OddsRatio = 1m/17155m, ProjectedPrize = 197830 },
-                        new PrizeTier{ MainMatches = 5, OddsRatio = 1m/424m, ProjectedPrize = 6060 },
-                        new PrizeTier{ MainMatches = 4, OddsRatio = 1m/30m, ProjectedPrize = 2425 }
+                        new PrizeTier{ MainMatches = 6, OddsRatio = 1m/17155m, ProjectedPrize = 247561 },
+                        new PrizeTier{ MainMatches = 5, OddsRatio = 1m/424m, ProjectedPrize = 6499 },
+                        new PrizeTier{ MainMatches = 4, OddsRatio = 1m/30m, ProjectedPrize = 2357 }
                     }
                 },
                 new Lottery
@@ -108,6 +110,8 @@ namespace Luckerryy.Data
                     X = 923,
                     Y = 313,
                     TicketPrice = 860,
+                    Jackpot = jackpot,
+                    TopTierOddsRatio = 1m/139838160m,
                     Schedule = new DrawSchedule
                     {
                         Days = new List<DayOfWeek> {DayOfWeek.Tuesday, DayOfWeek.Friday},
@@ -131,18 +135,17 @@ namespace Luckerryy.Data
                     },
                     PrizeTiers = new List<PrizeTier>
                     {
-                        new PrizeTier{ MainMatches = 5, ExtraMatches = 2, OddsRatio = 1m/139838160m, ProjectedPrize = 16200000000 },
-                        new PrizeTier{ MainMatches = 5, ExtraMatches = 1, OddsRatio = 1m/6991908m, ProjectedPrize = 732181883 },
-                        new PrizeTier{ MainMatches = 5, ExtraMatches = 0, OddsRatio = 1m/3107515m, ProjectedPrize = 49124190 },
-                        new PrizeTier{ MainMatches = 4, ExtraMatches = 2, OddsRatio = 1m/621503m, ProjectedPrize = 2278955 },
-                        new PrizeTier{ MainMatches = 4, ExtraMatches = 1, OddsRatio = 1m/31075m, ProjectedPrize = 102855 },
-                        new PrizeTier{ MainMatches = 3, ExtraMatches = 2, OddsRatio = 1m/14125m, ProjectedPrize = 66950 },
-                        new PrizeTier{ MainMatches = 4, ExtraMatches = 0, OddsRatio = 1m/13811m, ProjectedPrize = 34355 },
-                        new PrizeTier{ MainMatches = 2, ExtraMatches = 2, OddsRatio = 1m/985m, ProjectedPrize = 11910 },
-                        new PrizeTier{ MainMatches = 3, ExtraMatches = 1, OddsRatio = 1m/706m, ProjectedPrize = 7010 },
-                        new PrizeTier{ MainMatches = 3, ExtraMatches = 0, OddsRatio = 1m/314m, ProjectedPrize = 5975 },
-                        new PrizeTier{ MainMatches = 1, ExtraMatches = 2, OddsRatio = 1m/188m, ProjectedPrize = 5975 },
-                        new PrizeTier{ MainMatches = 2, ExtraMatches = 1, OddsRatio = 1m/49m, ProjectedPrize = 3870 },
+                        new PrizeTier{ MainMatches = 5, ExtraMatches = 1, OddsRatio = 1m/6991908m, ProjectedPrize = 348074158 },
+                        new PrizeTier{ MainMatches = 5, ExtraMatches = 0, OddsRatio = 1m/3107515m, ProjectedPrize = 66414928 },
+                        new PrizeTier{ MainMatches = 4, ExtraMatches = 2, OddsRatio = 1m/621503m, ProjectedPrize = 2226360 },
+                        new PrizeTier{ MainMatches = 4, ExtraMatches = 1, OddsRatio = 1m/31075m, ProjectedPrize = 126571 },
+                        new PrizeTier{ MainMatches = 3, ExtraMatches = 2, OddsRatio = 1m/14125m, ProjectedPrize = 65515 },
+                        new PrizeTier{ MainMatches = 4, ExtraMatches = 0, OddsRatio = 1m/13811m, ProjectedPrize = 41504 },
+                        new PrizeTier{ MainMatches = 2, ExtraMatches = 2, OddsRatio = 1m/985m, ProjectedPrize = 10699 },
+                        new PrizeTier{ MainMatches = 3, ExtraMatches = 1, OddsRatio = 1m/706m, ProjectedPrize = 8256 },
+                        new PrizeTier{ MainMatches = 3, ExtraMatches = 0, OddsRatio = 1m/314m, ProjectedPrize = 6846 },
+                        new PrizeTier{ MainMatches = 1, ExtraMatches = 2, OddsRatio = 1m/188m, ProjectedPrize = 5591 },
+                        new PrizeTier{ MainMatches = 2, ExtraMatches = 1, OddsRatio = 1m/49m, ProjectedPrize = 4210 },
                     }
                 },
                 new Lottery
@@ -151,6 +154,8 @@ namespace Luckerryy.Data
                     X = 546,
                     Y = 545,
                     TicketPrice = 400,
+                    Jackpot = jackpot,
+                    TopTierOddsRatio = 1m/1000000m,
                     Schedule = new DrawSchedule
                     {
                         Days = new List<DayOfWeek> {DayOfWeek.Saturday},
@@ -168,7 +173,6 @@ namespace Luckerryy.Data
                     },
                     PrizeTiers = new List<PrizeTier>
                     {
-                        new PrizeTier{ MainMatches = 6, OddsRatio = 1m/1000000m, ProjectedPrize = 30000000 },
                         new PrizeTier{ MainMatches = 5, OddsRatio = 1m/111111m, ProjectedPrize = 2500000 },
                         new PrizeTier{ MainMatches = 4, OddsRatio = 1m/11111m, ProjectedPrize = 250000 },
                         new PrizeTier{ MainMatches = 3, OddsRatio = 1m/1111m, ProjectedPrize = 25000 },
