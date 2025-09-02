@@ -25,9 +25,9 @@
 
 ## ⏳ Project Status
 
-📑 Planning Phase
-- Initial setup complete (GitHub, local repo, project structure).
-- Currently designing features and layout.
+📑 First Look Project Completed
+- Every initial feature has been added.
+- UI Layout is complete.
 
 ---
 
@@ -56,7 +56,7 @@ Luckerryy/
 - [X] Load all Hungarian lottery types
 - [ ] Display odds, prize tiers and value
 - [ ] Compare lotteries using value metrics
-- [ ] Refresh or update data (scraper)
+- [X] Refresh or update data (scraper)
 
 ---
 
@@ -74,8 +74,8 @@ Luckerryy/
 | Repo Setup     | ✅ Done         | May 2025       |
 | Planning       | ✅ Done         | May–June 2025  |
 | MVP Build      | ✅ Done         | June 2025      |
-| Automatization | 🔄️ Ongoing      | August 2025    |
-| UI Polish      | 🔄️ Ongoing      | August 2025    |
+| Automatization | ✅ Done         | August 2025    |
+| UI Polish      | ✅ Done         | August 2025    |
 
 ---
 
