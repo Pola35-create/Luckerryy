@@ -6,6 +6,5 @@ namespace Luckerryy.Models
         public int ExtraMatches { get; set; }
         public decimal OddsRatio { get; set; }
         public decimal ProjectedPrize { get; set; }
-        public decimal? EstimatedValue => ProjectedPrize * OddsRatio;
     }
 }

@@ -27,6 +27,10 @@ namespace Luckerryy.Models
         public decimal EV =>
             (PrizeTiers?.Sum(pt => pt.ProjectedPrize * pt.OddsRatio) ?? 0) +
             (Jackpot * TopTierOddsRatio);
+        public decimal? EVPercentage =>
+            TicketPrice != 0 ? (EV / TicketPrice) * 100 : null;
+        public string DisplayEV =>
+            $"EV: {EV:0.000} Ft - {(EVPercentage.HasValue ? EVPercentage.Value.ToString("0.00") + "%" : "N/A")}";
         public void UpdateJackpot(decimal jackpot)
         {
             Jackpot = jackpot;
