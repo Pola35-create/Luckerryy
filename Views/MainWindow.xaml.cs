@@ -24,7 +24,7 @@ namespace Luckerryy.Views
 
         private void LotteryBox_Click(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Ötöslottó details page coming soon!");
+            MessageBox.Show("Other details coming soon!");
         }
     }
 }

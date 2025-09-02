@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace Luckerryy.Models
 {
-    public class Lottery : INotfiyPropertyChanged
+    public class Lottery : INotifyPropertyChanged
     {
         private decimal _jackpot;
         public string Name { get; set; } = string.Empty;
@@ -19,7 +19,7 @@ namespace Luckerryy.Models
                 {
                     _jackpot = value;
                     OnPropertyChanged();
-                    OnpropertyChanged(nameof(EV));
+                    OnPropertyChanged(nameof(EV));
                 }
             }
         }
@@ -32,7 +32,7 @@ namespace Luckerryy.Models
             Jackpot = jackpot;
         }
         public event PropertyChangedEventHandler? PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
