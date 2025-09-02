@@ -20,6 +20,8 @@ namespace Luckerryy.Models
                     _jackpot = value;
                     OnPropertyChanged();
                     OnPropertyChanged(nameof(EV));
+                    OnPropertyChanged(nameof(EVPercentage));
+                    OnPropertyChanged(nameof(DisplayEV));
                 }
             }
         }

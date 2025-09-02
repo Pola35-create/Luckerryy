@@ -1,6 +1,4 @@
 using Luckerryy.Models;
-using Luckerryy.Services;
-using Luckerryy.Utils;
 
 namespace Luckerryy.Data
 {
