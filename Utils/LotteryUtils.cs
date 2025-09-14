@@ -12,9 +12,9 @@ namespace Luckerryy.Utils
             {
                 return decimal.Parse(numericText) * 1_000_000;
             }
-            if (jackpotText.Contains("millárd", StringComparison.OrdinalIgnoreCase))
+            if (jackpotText.Contains("milliárd", StringComparison.OrdinalIgnoreCase))
             {
-                return decimal.Parse(numericText) * 1_000_000_000;
+                return decimal.Parse(numericText) * 100_000_000;
             }
             return decimal.Parse(numericText);
         }

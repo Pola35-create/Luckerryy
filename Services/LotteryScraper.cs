@@ -51,7 +51,7 @@ namespace Luckerryy.Services
             using var driver = CreateDriver();
             driver.Navigate().GoToUrl("https://bet.szerencsejatek.hu/jatekok/eurojackpot");
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            var jackpotElement = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".expected-price")));
+            var jackpotElement = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".expected-price h3")));
             return jackpotElement.Text;
         }
         public string ScrapeJoker()
