@@ -1,10 +1,15 @@
 namespace Luckerryy.Models
 {
-    public class PrizeTier
+    public record PrizeTier(
+        string Name = "",
+        int MainMatches = 0,
+        int ExtraMatches = 0,
+        decimal OddsRatio = 0m,
+        decimal ProjectedPrize = 0m,
+        bool IsJackpot = false
+    )
     {
-        public int MainMatches { get; set; }
-        public int ExtraMatches { get; set; }
-        public decimal OddsRatio { get; set; }
-        public decimal ProjectedPrize { get; set; }
+        public double Probability => OddsRatio > 0 ? (double)OddsRatio : 0.0;
+        public decimal AvgPrize => ProjectedPrize;
     }
 }

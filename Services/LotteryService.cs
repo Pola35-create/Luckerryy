@@ -1,58 +1,60 @@
-using Luckerryy.Models;
 using Luckerryy.Utils;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Luckerryy.Services
 {
     public class LotteryService : ILotteryService
     {
         private readonly LotteryScraper _scraper;
-        private Dictionary<string, decimal> _jackpotCache;
-        private DateTime _lastUpdated;
-        public LotteryService()
+        private readonly Dictionary<string, decimal> _jackpotCache = new(StringComparer.OrdinalIgnoreCase);
+        
+        private static readonly string[] SupportedGames = new[]
         {
-            _scraper = new LotteryScraper();
-            _jackpotCache = new Dictionary<string, decimal>();
-            _lastUpdated = DateTime.MinValue;
-        }
-        public TimeSpan GetTimeUntilDeadline(Lottery lottery)
+            "otoslotto",
+            "hatoslotto",
+            "skandinavlotto",
+            "eurojackpot",
+            "joker"
+        };
+
+        public LotteryService(LotteryScraper scraper)
         {
-            var nextDeadLine = lottery.Schedule.NextDraw.Date + lottery.Schedule.Deadline;
-            return nextDeadLine - DateTime.Now;
+            _scraper = scraper;
+            LastUpdated = DateTime.MinValue;
         }
-        public void RefreshData()
+
+        public async Task RefreshDataAsync()
         {
             _jackpotCache.Clear();
 
-            string otosJackpotText = _scraper.ScrapeOtosLotto();
-            _jackpotCache["ötöslottó"] = LotteryUtils.ParseJackpot(otosJackpotText);
-            string hatosJackpotText = _scraper.ScrapeHatosLotto();
-            _jackpotCache["hatoslottó"] = LotteryUtils.ParseJackpot(hatosJackpotText);
-            string skandiJackpotText = _scraper.ScrapeSkandiLotto();
-            _jackpotCache["skandinávlottó"] = LotteryUtils.ParseJackpot(skandiJackpotText);
-            string euroJackpotText = _scraper.ScrapeEurojackpot();
-            _jackpotCache["eurojackpot"] = LotteryUtils.ParseJackpot(euroJackpotText);
-            string jokerJackpotText = _scraper.ScrapeJoker();
-            _jackpotCache["joker"] = LotteryUtils.ParseJackpot(jokerJackpotText);
-
-            _lastUpdated = DateTime.Now;
-        }
-        public async Task<decimal> GetJackpotAsync(string lotteryName)
-        {
-            return await Task.Run(() =>
+            // Fetch all jackpots concurrently in parallel using Task.WhenAll
+            var tasks = SupportedGames.Select(async game =>
             {
-                return lotteryName.ToLower() switch
-                {
-                    "ötöslottó" => LotteryUtils.ParseJackpot(_scraper.ScrapeOtosLotto()),
-                    "hatoslottó" => LotteryUtils.ParseJackpot(_scraper.ScrapeHatosLotto()),
-                    "skandinávlottó" => LotteryUtils.ParseJackpot(_scraper.ScrapeSkandiLotto()),
-                    "eurojackpot" => LotteryUtils.ParseJackpot(_scraper.ScrapeEurojackpot()),
-                    "joker" => LotteryUtils.ParseJackpot(_scraper.ScrapeJoker()),
-                    _ => 0
-                };
+                string rawText = await _scraper.ScrapeJackpotTextAsync(game);
+                decimal amount = LotteryUtils.ParseJackpot(rawText);
+                return (Game: game, Amount: amount);
             });
+
+            var results = await Task.WhenAll(tasks);
+
+            foreach (var result in results)
+            {
+                _jackpotCache[result.Game] = result.Amount;
+            }
+
+            LastUpdated = DateTime.Now;
         }
-        public DateTime LastUpdated => _lastUpdated;
+
+        public decimal GetJackpot(string lotteryName)
+        {
+            return _jackpotCache.TryGetValue(lotteryName, out decimal amount) ? amount : 0m;
+        }
+
+        public IReadOnlyDictionary<string, decimal> GetAllJackpots() => _jackpotCache;
+
+        public DateTime LastUpdated { get; private set; }
     }
 }

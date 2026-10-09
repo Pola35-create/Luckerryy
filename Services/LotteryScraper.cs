@@ -1,66 +1,45 @@
 ﻿using System;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
+using System.Net.Http;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using HtmlAgilityPack;
 
 namespace Luckerryy.Services
 {
     public class LotteryScraper
     {
-        private ChromeDriver CreateDriver()
-        {
-            var options = new ChromeOptions();
-            options.AddArgument("--headless");
-            options.AddArgument("--disable-gpu");
-            options.AddArgument("--no-sandbox");
-            options.AddArgument("--disable-dev-shm-usage");
+        private readonly HttpClient _httpClient;
 
-            var service = ChromeDriverService.CreateDefaultService();
-            service.HideCommandPromptWindow = true;
+        public LotteryScraper(HttpClient httpClient)
+        {
+        _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+        if (!_httpClient.DefaultRequestHeaders.Contains("User-Agent"))
+        {
+            _httpClient.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+        }
+        }
 
-            return new ChromeDriver(service, options);
-        }
-        public string ScrapeOtosLotto()
+        public async Task<string> ScrapeJackpotTextAsync(string gameEndpoint)
         {
-            using var driver = CreateDriver();
-            driver.Navigate().GoToUrl("https://bet.szerencsejatek.hu/jatekok/otoslotto");
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            var jackpotElement = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".expected-price")));
-            return jackpotElement.Text;
+            try
+            {
+                string url = $"https://bet.szerencsejatek.hu/jatekok/{gameEndpoint}";
+                string html = await _httpClient.GetStringAsync(url);
 
-        }
-        public string ScrapeHatosLotto()
-        {
-            using var driver = CreateDriver();
-            driver.Navigate().GoToUrl("https://bet.szerencsejatek.hu/jatekok/hatoslotto");
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            var jackpotElement = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".expected-price")));
-            return jackpotElement.Text;
-        }
-        public string ScrapeSkandiLotto()
-        {
-            using var driver = CreateDriver();
-            driver.Navigate().GoToUrl("https://bet.szerencsejatek.hu/jatekok/skandinavlotto");
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            var jackpotElement = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".expected-price")));
-            return jackpotElement.Text;
-        }
-        public string ScrapeEurojackpot()
-        {
-            using var driver = CreateDriver();
-            driver.Navigate().GoToUrl("https://bet.szerencsejatek.hu/jatekok/eurojackpot");
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            var jackpotElement = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".expected-price h3")));
-            return jackpotElement.Text;
-        }
-        public string ScrapeJoker()
-        {
-            using var driver = CreateDriver();
-            driver.Navigate().GoToUrl("https://bet.szerencsejatek.hu/jatekok/joker");
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            var jackpotElement = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".expected-price")));
-            return jackpotElement.Text;
+                var doc = new HtmlDocument();
+                doc.LoadHtml(html);
+
+                // Selector target based on site structure
+                var node = doc.DocumentNode.SelectSingleNode("//*[contains(@class, 'expected-price')]")
+                           ?? doc.DocumentNode.SelectSingleNode("//meta[@property='og:description']");
+
+                return node?.InnerText?.Trim() ?? string.Empty;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[Warning] Failed to scrape {gameEndpoint}: {ex.Message}");
+                return string.Empty;
+            }
         }
     }
 }
