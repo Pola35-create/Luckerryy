@@ -1,22 +1,19 @@
 # 💸 Luckerryy
-**Luckerryy** is a desktop application that helps users evaluate and compare the available lottery games in Hungary based on statistical odds, prize tiers and ticket prices -- aiming to identify the best-value options.
+**Luckerryy** is a console application that helps users evaluate and compare the available lottery games in Hungary based on statistical odds, prize tiers and ticket prices -- aiming to identify the best-value options.
 
 ---
 
 ## 📌 Project Goals
 
 - List all available lottery types in Hungary (e.g., Ötöslottó, Hatoslottó, Skandináv lottó, etc.)
-- Display chance of winning for each prize tier
-- Show prize money breakdown per tier
 - Compare value of each lottery based on odds, prizes and cost
-- Provide an intuitive desktop UI for analysis and interaction
 
 ---
 
 ## 🧰 Tech Stack
 
 - **Language**: C#
-- **Framework**: .NET (WPF for desktop UI)
+- **Framework**: .NET
 - **IDE**: Visual Studio 2022
 - **Version Control**: Git & GitHub
 
@@ -24,9 +21,9 @@
 
 ## ⏳ Project Status
 
-📑 First Look Project Completed
+📑 Project Completed
 - Every initial feature has been added.
-- UI Layout is complete.
+- Console App is working as expected.
 
 ---
 
@@ -34,12 +31,8 @@
 
 ```text
 Luckerryy/
-├── App.xaml
-├── App.xaml.cs
-├── AssemblyInfo.cs
 ├── Luckerryy.csproj
-├── MainWindow.xaml
-├── MainWindow.xaml.cs
+├── Program.cs
 ├── obj/
 │   ├── Luckerryy.csproj.nuget.dgspec.json
 │   ├── project.assets.json
@@ -53,8 +46,8 @@ Luckerryy/
 ## 📈 Planned Features
 
 - [X] Load all Hungarian lottery types
-- [ ] Display odds, prize tiers and value
-- [ ] Compare lotteries using value metrics
+- [X] Display odds, prize tiers and value
+- [X] Compare lotteries using value metrics
 - [X] Refresh or update data (scraper)
 
 ---
