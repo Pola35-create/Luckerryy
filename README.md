@@ -1,5 +1,4 @@
 # 💸 Luckerryy
-![Luckerryy Screenshot](docs/screenshot.png)
 **Luckerryy** is a desktop application that helps users evaluate and compare the available lottery games in Hungary based on statistical odds, prize tiers and ticket prices -- aiming to identify the best-value options.
 
 ---
